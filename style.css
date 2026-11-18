@@ -1,0 +1,74 @@
+/* Wataru Murakami — edit colors, fonts, and spacing here */
+:root {
+  --background: #faf9f6;  /* Background */
+  --text: #222222;        /* Main text */
+  --muted: #77736e;       /* Secondary text */
+  --line: #d8d5ce;
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--muted); }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+.homepage { min-height: 100svh; }
+.home-content {
+  min-height: 100svh;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 5.1vw, 4.35rem); /* Name size */
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin: 0;
+}
+.home-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin-top: 3.1rem;
+  font-size: 0.79rem;
+  letter-spacing: 0.06em;
+}
+.home-links a { border-bottom: 1px solid var(--line); padding-bottom: 0.35rem; transition: color .15s; }
+.external-marker { font-size: 0.77em; margin-left: .28em; }
+
+/* CV page */
+.cv-container { max-width: 890px; margin: 0 auto; padding: 3rem clamp(1.3rem, 5vw, 4rem) 6rem; }
+.cv-header { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--line); }
+.cv-site-name { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 400; letter-spacing: -0.03em; }
+.cv-back { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+.cv-intro { margin: 4rem 0 3.5rem; }
+.cv-intro h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
+.cv-intro p { margin: 0.8rem 0 0; color: #56534f; font-size: 0.9rem; line-height: 1.8; }
+.cv-download { display: inline-block; font-size: .8rem; border-bottom: 1px solid var(--muted); margin-top: 1.4rem; padding-bottom: .25rem; }
+.cv-section { display: grid; grid-template-columns: minmax(150px, 210px) 1fr; gap: 1.4rem; border-top: 1px solid var(--line); padding: 2.2rem 0; }
+.cv-section h2 { font-size: .8rem; font-weight: 600; margin: 0; letter-spacing: .045em; line-height: 1.6; }
+.cv-entries { display: grid; gap: .8rem; }
+.cv-entry { display: grid; grid-template-columns: 95px 1fr; gap: 1rem; font-size: .85rem; line-height: 1.55; }
+.cv-year { color: var(--muted); font-variant-numeric: tabular-nums; }
+.cv-description { margin: 0; }
+@media (max-width: 660px) {
+  .cv-container { padding-top: 1.5rem; }
+  .cv-section { grid-template-columns: 1fr; gap: 1.2rem; }
+  .cv-entry { grid-template-columns: 78px 1fr; gap: .7rem; }
+  .cv-intro { margin: 3.1rem 0 3rem; }
+  .home-links { gap: 1.35rem; }
+}
+@media (prefers-reduced-motion: reduce) { .home-links a { transition: none; } }
